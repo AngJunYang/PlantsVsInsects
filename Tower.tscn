@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Tower.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Eggplant/Idle.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 64.0
+
+[node name="Tower" type="Node2D"]
+script = ExtResource( 1 )
+attack_range = 30.0
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 2 )
+
+[node name="Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
+shape = SubResource( 1 )

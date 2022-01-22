@@ -8,14 +8,29 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "PathFollow2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://Enemy.gd"
+} ]
 _global_script_class_icons={
+<<<<<<< Updated upstream
+=======
+"Enemy": ""
+>>>>>>> Stashed changes
 }
 
 [application]
 
 config/name="PlantVsInsects"
+run/main_scene="res://Game.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/stretch/mode="2d"
+window/stretch/aspect="expand"
 
 [rendering]
 
