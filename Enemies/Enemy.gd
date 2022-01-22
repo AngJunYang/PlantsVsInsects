@@ -27,8 +27,7 @@ func _physics_process(delta):
 	set_offset(displacement)
 	if self.unit_offset >= 1.0:
 		self.queue_free()
-	
-	pass
+
 	
 func damage(amt):
 	currenthealth -= amt
