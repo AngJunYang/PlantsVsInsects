@@ -11,7 +11,7 @@ var wave_id = 0;
 var delay = 3.0
 var enemies_left = 0
 
-var max_level = 20
+var max_level = 14
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -114,6 +114,8 @@ func spawn_wave(wave_data):
 		var enemy = load("res://Enemies/" + i[1] + ".tscn").instance()
 		get_node(i[0]).add_child(enemy)
 		yield(get_tree().create_timer(i[2]), "timeout")
+	if wave_id == max_level:
+		get_tree().quit()
 	start_next_wave()
 	
 ##########

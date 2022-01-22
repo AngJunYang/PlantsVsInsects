@@ -79,3 +79,11 @@ func get_enemy():
 
 func _on_AtkCD_timeout():
 	self.canFire = true
+
+
+func _on_Tower_mouse_entered():
+	$Range.visible = true
+
+
+func _on_Tower_mouse_exited():
+	$Range.visible = false
