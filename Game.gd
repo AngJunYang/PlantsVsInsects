@@ -100,7 +100,6 @@ func start_next_wave():
 	var wave_data = waves.get_wave(wave_id)
 	yield(get_tree().create_timer(delay), "timeout")
 	enemies_left = wave_data.size()
-	print(enemies_left)
 	spawn_wave(wave_data)
 	wave_id += 1
 	
