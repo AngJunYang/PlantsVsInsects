@@ -21,7 +21,6 @@ func _process(delta):
 		a.speed = 5
 		a.start_timer(2)
 		self.canFire = false
-		
 	pass
 
 func get_enemy():

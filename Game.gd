@@ -3,7 +3,7 @@ extends Node2D
 onready var cycle = $AnimationPlayer
 var waves = preload("res://Waves.gd").new()
 
-export (int) var hp = 20;
+export (int) var hp = 100;
 export (int) var money = 100;
 var time = 0;
 var wave_id = 0;
@@ -54,17 +54,22 @@ func initiate_build_mode(tower_type):
 	
 func update_tower_preview():
 	var mouse_position = get_global_mouse_position()
-	var current_tile = $TileMap.world_to_map(mouse_position)
-	var tile_position = $TileMap.map_to_world(current_tile)  # Snap
-	
-	# Invalid 
-	if $TileMap.get_cellv(current_tile) == 1:
-		$UI.update_tower_preview(tile_position, "adff4545")
-		build_valid = false
+	var current_tile = mouse_position
+	var tower = get_node("UI/TowerPreview/DragTower")
+	build_valid = true
+	for area in tower.get_overlapping_areas():
+		print(area.get_name())
+		if area.get_name() == "Range":
+			continue 
+		else:
+			build_valid = false
+		
+	if build_valid:
+		$UI.update_tower_preview(mouse_position, "ad54ff3c")
+		build_location = mouse_position
 	else:
-		$UI.update_tower_preview(tile_position, "ad54ff3c")
-		build_valid = true
-		build_location = tile_position
+		$UI.update_tower_preview(mouse_position, "adff4545")
+
 
 func cancel_build_mode():
 	build_mode = false
@@ -112,6 +117,8 @@ func spawn_wave(wave_data):
 ##########
 
 func _on_Home_area_entered(area):
+	if not "damage" in area.get_parent():
+		return
 	hp -= area.get_parent().damage
 	if hp < 0:
 		get_tree().quit()
