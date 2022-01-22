@@ -15,10 +15,7 @@ _global_script_classes=[ {
 "path": "res://Enemy.gd"
 } ]
 _global_script_class_icons={
-<<<<<<< Updated upstream
-=======
 "Enemy": ""
->>>>>>> Stashed changes
 }
 
 [application]
