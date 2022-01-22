@@ -21,4 +21,7 @@ func _ready():
 func _process(delta):
 	displacement += speed
 	set_offset(displacement)
+	if self.unit_offset >= 1.0:
+		self.queue_free()
+	
 	pass

@@ -16,3 +16,8 @@ scale = Vector2( 0.25, 0.25 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Range"]
 shape = SubResource( 1 )
+
+[node name="AtkCD" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="AtkCD" to="." method="_on_AtkCD_timeout"]
