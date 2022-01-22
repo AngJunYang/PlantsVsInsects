@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Assets/Eggplant/Idle.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Kenny/PNG/Default size/towerDefense_tile129.png" type="Texture" id=2]
@@ -15,7 +15,6 @@
 [ext_resource path="res://Assets/Avocado/avocado.png" type="Texture" id=13]
 [ext_resource path="res://Assets/Button/New Piskel-1.png (24).png" type="Texture" id=14]
 [ext_resource path="res://Assets/BoxerMushroom/boxer.png" type="Texture" id=15]
-[ext_resource path="res://Plants/PeaShooter.tscn" type="PackedScene" id=16]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -319,12 +318,6 @@ expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="PeaShooter" parent="." instance=ExtResource( 16 )]
-position = Vector2( 213.382, 426.506 )
-attack_range = 500.0
-targetting = "strongest"
-bulletspeed = 500.0
 
 [connection signal="area_entered" from="Home" to="." method="_on_Home_area_entered"]
 [connection signal="area_shape_entered" from="Home" to="." method="_on_Home_area_shape_entered"]

@@ -23,5 +23,5 @@ func _on_Lifetime_timeout():
 func _on_Node2D_area_entered(body):
 	print(body)
 	if body.get_parent().is_in_group("Enemy"):
-			body.get_parent().damage(dmg)
-			self.queue_free()
+		body.get_parent().damage(dmg)
+		self.queue_free()

@@ -10,7 +10,7 @@ onready var bullet_1 = preload("res://Bullets/Pea_1.tscn")
 var currentBullet = bullet_1
 var canFire = true
 export(String,"nearest","strongest","weakest","furthest") var targetting = "nearest";
-export (float) var bulletspeed = 100
+export (float) var bulletspeed = 500
 export var atk_cooldown = 2.0
 func _ready():
 	$Range/CollisionShape2D.shape.radius = attack_range

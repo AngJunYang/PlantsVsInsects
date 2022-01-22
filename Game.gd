@@ -46,6 +46,7 @@ var build_type = ""
 var build_mode = false
 var build_valid = false
 var build_location
+var select_mode = false
 
 func initiate_build_mode(tower_type):
 	build_mode = true
