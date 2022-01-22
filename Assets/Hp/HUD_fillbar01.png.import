@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/New Piskel.png-b6eb46f927f0b938c1eb8618beab3da3.stex"
+path="res://.import/HUD_fillbar01.png-f2f39d4f055c807bc1cecbcb02aa6f34.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Ant/New Piskel.png"
-dest_files=[ "res://.import/New Piskel.png-b6eb46f927f0b938c1eb8618beab3da3.stex" ]
+source_file="res://Assets/Hp/HUD_fillbar01.png"
+dest_files=[ "res://.import/HUD_fillbar01.png-f2f39d4f055c807bc1cecbcb02aa6f34.stex" ]
 
 [params]
 

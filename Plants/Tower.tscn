@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Tower.gd" type="Script" id=1]
+[ext_resource path="res://Plants/Tower.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Eggplant/Idle.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
