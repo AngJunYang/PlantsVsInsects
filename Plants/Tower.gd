@@ -18,7 +18,7 @@ func _ready():
 
 func _process(delta):
 	var a = get_enemy()
-	if canFire and a:
+	if canFire and a and checkTime():
 		shoot(a)
 		self.canFire = false
 		$AtkCD.start(atk_cooldown)
@@ -32,6 +32,13 @@ func shoot(enemy):
 	var direction = (self.global_position + Vector2(16,16) - enemy.global_position).normalized()
 	var new_angle =  PI + atan2(direction.y, direction.x) 
 	a.rotation  = new_angle - a.rotation
+	
+func checkTime():
+	var time = get_tree().get_root().get_node("Game/AnimationPlayer").get_current_animation_position()
+	if (time > 0 and time < 90) || (time > 180 and time < 240):
+		return self.is_in_group("PLANTS")
+	else:
+		return not self.is_in_group("PLANTS")
 
 func get_enemy():
 		var bodies = $Range.get_overlapping_areas()
