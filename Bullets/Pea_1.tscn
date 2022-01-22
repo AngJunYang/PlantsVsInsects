@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Bullets/Bullet.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/green test.png" type="Texture" id=2]
+[ext_resource path="res://Bullets/Pea_1.gd" type="Script" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -35,6 +36,7 @@ animations = [ {
 radius = 6.02486
 
 [node name="Node2D" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
 
 [node name="AnimatedSprite" parent="." index="1"]
 scale = Vector2( 4, 4 )
