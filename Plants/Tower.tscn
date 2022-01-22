@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Plants/Tower.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Eggplant/Idle.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 64.0
@@ -10,9 +9,8 @@ radius = 64.0
 script = ExtResource( 1 )
 attack_range = 30.0
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Sprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 2 )
 
 [node name="Range" type="Area2D" parent="."]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Assets/Eggplant/Idle.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Kenny/PNG/Default size/towerDefense_tile129.png" type="Texture" id=2]
@@ -8,6 +8,10 @@
 [ext_resource path="res://Health.gd" type="Script" id=6]
 [ext_resource path="res://Assets/Hp/Hpbar content.png" type="Texture" id=7]
 [ext_resource path="res://Assets/Hp/Border.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Pea Shooter/peashooter.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Kenny/PNG/Default size/towerDefense_tile015.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Shroom/Idle.png" type="Texture" id=11]
+[ext_resource path="res://UI.gd" type="Script" id=12]
 
 [sub_resource type="NavigationPolygon" id=1]
 
@@ -135,26 +139,40 @@ texture = ExtResource( 1 )
 curve = SubResource( 6 )
 
 [node name="DayNightCycle" type="CanvasModulate" parent="."]
+color = Color( 0.336802, 0.329585, 0.310453, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 16.0
 method_call_mode = 1
 anims/day_and_night = SubResource( 7 )
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource( 12 )
 
-[node name="Health" type="HBoxContainer" parent="CanvasLayer"]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="ColorRect" type="ColorRect" parent="UI"]
+modulate = Color( 0.129412, 0.0941176, 0.0941176, 0.243137 )
+margin_top = 544.0
+margin_right = 1088.0
+margin_bottom = 608.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Health" type="HBoxContainer" parent="UI"]
+margin_left = 38.0
+margin_top = 560.0
+margin_right = 78.0
+margin_bottom = 600.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
 script = ExtResource( 6 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="TextureProgress" type="TextureProgress" parent="CanvasLayer/Health"]
+[node name="TextureProgress" type="TextureProgress" parent="UI/Health"]
 margin_right = 22.0
 margin_bottom = 40.0
 max_value = 20.0
@@ -166,33 +184,107 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="CanvasLayer/Health"]
+[node name="Label" type="Label" parent="UI/Health"]
 margin_left = 22.0
 margin_top = 13.0
 margin_right = 38.0
 margin_bottom = 27.0
 text = "20"
 
-[node name="Cash" type="HBoxContainer" parent="CanvasLayer"]
-margin_top = 40.0
-margin_right = 60.0
-margin_bottom = 80.0
+[node name="Cash" type="HBoxContainer" parent="UI"]
+margin_left = 96.0
+margin_top = 560.0
+margin_right = 156.0
+margin_bottom = 600.0
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Cash"]
+[node name="TextureRect" type="TextureRect" parent="UI/Cash"]
 margin_right = 32.0
 margin_bottom = 40.0
 texture = ExtResource( 4 )
 
-[node name="Label" type="Label" parent="CanvasLayer/Cash"]
+[node name="Label" type="Label" parent="UI/Cash"]
 margin_left = 36.0
 margin_top = 13.0
 margin_right = 60.0
 margin_bottom = 27.0
 text = "100"
+
+[node name="BuildBar" type="HBoxContainer" parent="UI"]
+margin_left = 240.0
+margin_top = 544.0
+margin_right = 440.0
+margin_bottom = 608.0
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="PeaShooter" type="TextureButton" parent="UI/BuildBar" groups=[
+"build_buttons",
+]]
+margin_right = 64.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 10 )
+
+[node name="TextureRect" type="TextureRect" parent="UI/BuildBar/PeaShooter"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 48.0
+margin_bottom = 48.0
+size_flags_horizontal = 5
+size_flags_vertical = 5
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EggPlant" type="TextureButton" parent="UI/BuildBar" groups=[
+"build_buttons",
+]]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 10 )
+
+[node name="TextureRect" type="TextureRect" parent="UI/BuildBar/EggPlant"]
+margin_left = 20.0
+margin_top = 16.0
+margin_right = 52.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 32, 32 )
+size_flags_horizontal = 5
+size_flags_vertical = 5
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shroom" type="TextureButton" parent="UI/BuildBar" groups=[
+"build_buttons",
+]]
+margin_left = 136.0
+margin_right = 200.0
+margin_bottom = 64.0
+texture_normal = ExtResource( 10 )
+
+[node name="TextureRect" type="TextureRect" parent="UI/BuildBar/Shroom"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 48.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 32, 32 )
+size_flags_horizontal = 5
+size_flags_vertical = 5
+texture = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="area_entered" from="Home" to="." method="_on_Home_area_entered"]
 [connection signal="area_shape_entered" from="Home" to="." method="_on_Home_area_shape_entered"]

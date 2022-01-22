@@ -23,6 +23,7 @@ animations = [ {
 
 [node name="GreyRat" instance=ExtResource( 1 )]
 speed = 5.0
+health = 3
 
 [node name="Sprite" parent="." index="0"]
 frames = SubResource( 3 )

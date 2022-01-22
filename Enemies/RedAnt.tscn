@@ -22,6 +22,8 @@ animations = [ {
 } ]
 
 [node name="RedAnt" instance=ExtResource( 1 )]
+damage = 2
 
 [node name="Sprite" parent="." index="0"]
 frames = SubResource( 3 )
+frame = 1

@@ -15,8 +15,31 @@ var enemies_left = 0
 func _ready():
 	cycle.playback_speed = 16.0
 	cycle.play("day_and_night")
+	# Connect the UI elements
+	
+	for i in get_tree().get_nodes_in_group("build_buttons"):
+		i.connect("pressed", self, "initiate_build_mode", [i.get_name()])
+	
+	
+	
+	# Start the game
 	start_next_wave()
 	pass # Replace with function body.
+	
+##########
+# UI Logic
+##########
+
+var build_type = ""
+var build_mode = false
+
+func initiate_build_mode(tower_type):
+	build_mode = true
+	get_node("UI").set_tower_preview(tower_type, get_global_mouse_position())
+
+############
+# Wave logic
+############
 
 func start_next_wave():
 	var wave_data = waves.get_wave(wave_id)
@@ -35,13 +58,16 @@ func spawn_wave(wave_data):
 		get_node(i[0]).add_child(enemy)
 		yield(get_tree().create_timer(i[2]), "timeout")
 
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	time = cycle.get_current_animation_length()
-
+	
+##########
+# Hp Logic
+##########
 
 func _on_Home_area_entered(area):
 	hp -= area.get_parent().damage
-	$CanvasLayer/Health._update(hp)
+	if hp < 0:
+		get_tree().quit()
+	$UI/Health._update(hp)
