@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Plants/Tower.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Avocado/New Piskel (5).png" type="Texture" id=2]
+[ext_resource path="res://Plants/Avocado.gd" type="Script" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -22,6 +23,8 @@ animations = [ {
 } ]
 
 [node name="Avocado" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+attack_range = 64.0
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2( 1, 1 )
