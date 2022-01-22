@@ -109,7 +109,6 @@ curve = SubResource( 5 )
 [node name="DayNightCycle" type="CanvasModulate" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-playback_speed = 16.0
 method_call_mode = 1
 anims/day_and_night = SubResource( 6 )
 
@@ -208,6 +207,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="UI/BuildBar/PeaShooter"]
+margin_left = 32.0
+margin_top = 43.0
+margin_right = 72.0
+margin_bottom = 57.0
+text = "20"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="EggPlant" type="TextureButton" parent="UI/BuildBar" groups=[
 "build_buttons",
 ]]
@@ -226,6 +235,16 @@ size_flags_horizontal = 5
 size_flags_vertical = 5
 texture = ExtResource( 1 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI/BuildBar/EggPlant"]
+margin_left = 28.0
+margin_top = 43.0
+margin_right = 68.0
+margin_bottom = 57.0
+text = "50"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -252,6 +271,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="UI/BuildBar/Avocado"]
+margin_left = 32.0
+margin_top = 43.0
+margin_right = 72.0
+margin_bottom = 57.0
+text = "70"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="ButtonMushroom" type="TextureButton" parent="UI/BuildBar" groups=[
 "build_buttons",
 ]]
@@ -270,6 +299,16 @@ size_flags_horizontal = 5
 size_flags_vertical = 5
 texture = ExtResource( 11 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI/BuildBar/ButtonMushroom"]
+margin_left = 28.0
+margin_top = 43.0
+margin_right = 68.0
+margin_bottom = 57.0
+text = "20"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -296,6 +335,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Label" type="Label" parent="UI/BuildBar/BoxerMushroom"]
+margin_left = 24.0
+margin_top = 43.0
+margin_right = 64.0
+margin_bottom = 57.0
+text = "50"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="MineMushroom" type="TextureButton" parent="UI/BuildBar" groups=[
 "build_buttons",
 ]]
@@ -314,6 +363,16 @@ size_flags_horizontal = 5
 size_flags_vertical = 5
 texture = ExtResource( 14 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI/BuildBar/MineMushroom"]
+margin_left = 28.0
+margin_top = 43.0
+margin_right = 68.0
+margin_bottom = 57.0
+text = "70"
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -13,7 +13,9 @@ animations = [ {
 } ]
 
 [node name="MineMushroom" instance=ExtResource( 1 )]
+cost = 70
 
 [node name="Sprite" parent="." index="0"]
 frames = SubResource( 1 )
+frame = 1
 playing = true
