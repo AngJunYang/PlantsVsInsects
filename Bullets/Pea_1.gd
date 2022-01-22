@@ -11,7 +11,7 @@ func _ready():
 	pass # Replace with function body.
 	
 func _physics_process(delta):
-	if target != null:
+	if is_instance_valid(target):
 		self.rotation = self.global_position.angle_to_point(target.global_position) + PI
 
 

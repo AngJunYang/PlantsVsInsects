@@ -20,7 +20,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	displacement += speed
 	set_offset(displacement)
 	if self.unit_offset >= 1.0:
@@ -32,5 +32,5 @@ func damage(amt):
 	currenthealth -= amt
 	$HP.hp_update(health,currenthealth)
 	if currenthealth <= 0:
-		self.queue_free()
+		call_deferred("queue_free")
 	
