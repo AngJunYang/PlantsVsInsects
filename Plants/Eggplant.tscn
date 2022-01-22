@@ -17,9 +17,11 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Eggplant" instance=ExtResource( 1 )]
+[node name="Eggplant" groups=[
+"PLANTS",
+] instance=ExtResource( 1 )]
+cost = 50
 
 [node name="Sprite" parent="." index="0"]
 frames = SubResource( 2 )
-frame = 1
 playing = true

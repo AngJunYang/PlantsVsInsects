@@ -25,6 +25,7 @@ animations = [ {
 [node name="Avocado" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 attack_range = 64.0
+cost = 70
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2( 1, 1 )

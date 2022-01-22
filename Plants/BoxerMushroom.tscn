@@ -22,6 +22,7 @@ animations = [ {
 } ]
 
 [node name="BoxerMushroom" instance=ExtResource( 1 )]
+cost = 50
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2( 1, 1 )

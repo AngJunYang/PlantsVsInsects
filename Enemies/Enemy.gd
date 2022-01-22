@@ -12,6 +12,8 @@ var currenthealth
 # How much damage the enemy deals when it reaches the home
 export var damage = 1;
 
+export var gold = 1;
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	set_offset(displacement)	
@@ -32,5 +34,6 @@ func damage(amt):
 	currenthealth -= amt
 	$HP.hp_update(health,currenthealth)
 	if currenthealth <= 0:
+		Globals.cash += gold
 		call_deferred("queue_free")
 	

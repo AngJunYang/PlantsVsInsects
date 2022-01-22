@@ -30,3 +30,4 @@ speed = 1.0
 
 [node name="Sprite" parent="." index="0"]
 frames = SubResource( 4 )
+frame = 1

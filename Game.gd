@@ -11,9 +11,11 @@ var wave_id = 0;
 var delay = 3.0
 var enemies_left = 0
 
+var max_level = 20
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	cycle.playback_speed = 16.0
+	cycle.playback_speed = 1.0
 	cycle.play("day_and_night")
 	# Connect the UI elements
 	
@@ -27,6 +29,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	time = cycle.get_current_animation_length()
+	$UI/Cash/Label.text = str(Globals.cash)
 	if build_mode:
 		update_tower_preview()
 		
@@ -58,6 +61,7 @@ func update_tower_preview():
 	var current_tile = mouse_position
 	var tower = get_node("UI/TowerPreview/DragTower")
 	build_valid = true
+	# Check collision
 	for area in tower.get_overlapping_areas():
 		print(area.get_name())
 		if area.get_name() == "Range":
@@ -65,7 +69,7 @@ func update_tower_preview():
 		else:
 			build_valid = false
 		
-	if build_valid:
+	if build_valid and Globals.cash >= tower.cost:
 		$UI.update_tower_preview(mouse_position, "ad54ff3c")
 		build_location = mouse_position
 	else:
@@ -85,11 +89,10 @@ func verify_and_build():
 			break
 	if build_valid:
 		# ToDo: Check if player has enough money
-		print(build_type)
-		print(build_location)
 		var new_tower = load("res://Plants/" + build_type + ".tscn").instance()
 		new_tower.position = build_location
 		$Towers.add_child(new_tower, true)
+		Globals.cash -= new_tower.cost
 	pass
 
 ############
@@ -111,6 +114,7 @@ func spawn_wave(wave_data):
 		var enemy = load("res://Enemies/" + i[1] + ".tscn").instance()
 		get_node(i[0]).add_child(enemy)
 		yield(get_tree().create_timer(i[2]), "timeout")
+	start_next_wave()
 	
 ##########
 # Hp Logic
