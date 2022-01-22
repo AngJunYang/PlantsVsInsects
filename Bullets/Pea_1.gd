@@ -11,10 +11,8 @@ func _ready():
 	pass # Replace with function body.
 	
 func _process(delta):
-	if !target:
-		var direction = (self.position - target).normalized()
-		var new_angle =  PI + atan2(direction.y, direction.x) 
-		self.rotation  = new_angle - rotation
+	if target:
+		self.rotation = self.global_position.angle_to_point(target.global_position) + PI
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

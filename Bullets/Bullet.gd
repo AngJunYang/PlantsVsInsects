@@ -6,7 +6,7 @@ extends Area2D
 # var b = "text"
 var target
 var speed = 5
-
+export var dmg = 1
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -20,8 +20,8 @@ func start_timer(time):
 func _on_Lifetime_timeout():
 	self.queue_free()
 
-
-func _on_Node2D_body_entered(body):
-	if body.is_in_group("enemy"):
-		pass
-	pass # Replace with function body.
+func _on_Node2D_area_entered(body):
+	print(body)
+	if body.get_parent().is_in_group("Enemy"):
+			body.get_parent().damage(dmg)
+			self.queue_free()

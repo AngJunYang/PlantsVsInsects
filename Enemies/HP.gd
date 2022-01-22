@@ -1,5 +1,8 @@
 extends Node2D
 
+func _ready():
+	self.modulate.a = 0
+
 func hp_update(maxHp, currentHp):
 	$Bar.max_value = maxHp
 	$Bar.value = currentHp

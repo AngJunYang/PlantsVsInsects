@@ -322,6 +322,9 @@ __meta__ = {
 
 [node name="PeaShooter" parent="." instance=ExtResource( 16 )]
 position = Vector2( 213.382, 426.506 )
+attack_range = 500.0
+targetting = "strongest"
+bulletspeed = 500.0
 
 [connection signal="area_entered" from="Home" to="." method="_on_Home_area_entered"]
 [connection signal="area_shape_entered" from="Home" to="." method="_on_Home_area_shape_entered"]

@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Enemies/Enemy.gd" type="Script" id=1]
 [ext_resource path="res://Enemies/HP.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Hp/HUD_fillbar01.png" type="Texture" id=3]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -83,7 +84,9 @@ material = SubResource( 4 )
 rotation = 1.5708
 playing = true
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=[
+"Enemy",
+]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 5 )
@@ -94,6 +97,7 @@ script = ExtResource( 2 )
 [node name="Bar" type="TextureProgress" parent="HP"]
 margin_right = 40.0
 margin_bottom = 40.0
+texture_progress = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
