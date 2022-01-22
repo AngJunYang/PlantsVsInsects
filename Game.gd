@@ -20,22 +20,71 @@ func _ready():
 	for i in get_tree().get_nodes_in_group("build_buttons"):
 		i.connect("pressed", self, "initiate_build_mode", [i.get_name()])
 	
-	
-	
 	# Start the game
 	start_next_wave()
 	pass # Replace with function body.
 	
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	time = cycle.get_current_animation_length()
+	if build_mode:
+		update_tower_preview()
+		
+
+func _unhandled_input(event):
+	if event.is_action_released("ui_cancel") and build_mode:
+		cancel_build_mode()
+	elif event.is_action_released("ui_accept") and build_mode:
+		verify_and_build()
+		cancel_build_mode()
+	
 ##########
-# UI Logic
+# Building Logic
 ##########
 
 var build_type = ""
 var build_mode = false
+var build_valid = false
+var build_location
 
 func initiate_build_mode(tower_type):
 	build_mode = true
+	build_type = tower_type
 	get_node("UI").set_tower_preview(tower_type, get_global_mouse_position())
+	
+func update_tower_preview():
+	var mouse_position = get_global_mouse_position()
+	var current_tile = $TileMap.world_to_map(mouse_position)
+	var tile_position = $TileMap.map_to_world(current_tile)  # Snap
+	
+	# Invalid 
+	if $TileMap.get_cellv(current_tile) == 1:
+		$UI.update_tower_preview(tile_position, "adff4545")
+		build_valid = false
+	else:
+		$UI.update_tower_preview(tile_position, "ad54ff3c")
+		build_valid = true
+		build_location = tile_position
+
+func cancel_build_mode():
+	build_mode = false
+	build_valid = false
+	get_node("UI/TowerPreview").queue_free()
+	
+func verify_and_build():
+	# Check collision with other towers
+	for tower in $Towers.get_children():
+		if tower.position == build_location:
+			build_valid = false
+			break
+	if build_valid:
+		# ToDo: Check if player has enough money
+		print(build_type)
+		print(build_location)
+		var new_tower = load("res://Plants/" + build_type + ".tscn").instance()
+		new_tower.position = build_location
+		$Towers.add_child(new_tower, true)
+	pass
 
 ############
 # Wave logic
@@ -57,10 +106,6 @@ func spawn_wave(wave_data):
 		var enemy = load("res://Enemies/" + i[1] + ".tscn").instance()
 		get_node(i[0]).add_child(enemy)
 		yield(get_tree().create_timer(i[2]), "timeout")
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	time = cycle.get_current_animation_length()
 	
 ##########
 # Hp Logic
