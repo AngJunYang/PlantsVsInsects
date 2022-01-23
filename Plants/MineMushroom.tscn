@@ -20,4 +20,5 @@ cost = 100
 
 [node name="Sprite" parent="." index="0"]
 frames = SubResource( 1 )
+frame = 1
 playing = true

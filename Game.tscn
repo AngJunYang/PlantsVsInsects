@@ -143,8 +143,8 @@ __meta__ = {
 [node name="TextureProgress" type="TextureProgress" parent="UI/Health"]
 margin_right = 22.0
 margin_bottom = 40.0
-max_value = 20.0
-value = 20.0
+max_value = 40.0
+value = 40.0
 texture_over = ExtResource( 8 )
 texture_progress = ExtResource( 7 )
 fill_mode = 3
@@ -155,9 +155,9 @@ __meta__ = {
 [node name="Label" type="Label" parent="UI/Health"]
 margin_left = 22.0
 margin_top = 13.0
-margin_right = 46.0
+margin_right = 38.0
 margin_bottom = 27.0
-text = "100"
+text = "40"
 
 [node name="Cash" type="HBoxContainer" parent="UI"]
 margin_left = 88.0

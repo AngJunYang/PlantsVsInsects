@@ -3,7 +3,7 @@ extends Node2D
 onready var cycle = $AnimationPlayer
 var waves = preload("res://Waves.gd").new()
 
-export (int) var hp = 100;
+export (int) var hp = 40;
 export (int) var money = 100;
 var time = 0;
 var wave_id = 0;
@@ -11,11 +11,11 @@ var wave_id = 0;
 var delay = 3.0
 var enemies_left = 0
 
-var max_level = 11
+var max_level = 12
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	cycle.playback_speed = 1.0
+	cycle.playback_speed = 8.0
 	cycle.play("day_and_night")
 	# Connect the UI elements
 	
