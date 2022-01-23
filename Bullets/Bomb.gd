@@ -14,7 +14,7 @@ func _ready():
 func _on_Node2D_area_entered(body):
 	if body.get_parent().is_in_group("Enemy"):
 		for x in range(10):
-			shoot(x * 2 * PI / 10)
+			call_deferred("shoot",(x * 2 * PI / 10))
 		body.get_parent().damage(dmg)
 		self.queue_free()
 		
