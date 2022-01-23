@@ -12,12 +12,23 @@ var canFire = true
 export(String,"nearest","strongest","weakest","furthest") var targetting = "nearest";
 export (float) var bulletspeed = 500
 export var atk_cooldown = 2.0
+var init = false
 func _ready():
 	$Range/CollisionShape2D.shape.radius = attack_range
 	pass # Replace with function body.
 
 func _process(delta):
+	if !init:
+		return
 	var a = get_enemy()
+	if checkTime():
+		$Sprite.playing = true
+		$Sprite.self_modulate = Color(1,1,1)
+	else:
+		$Sprite.frame = 0
+		$Sprite.playing = false
+		$Sprite.self_modulate = Color(0.4,0.4,0.4)
+		
 	if canFire and a and checkTime():
 		shoot(a)
 		self.canFire = false
@@ -82,8 +93,8 @@ func _on_AtkCD_timeout():
 
 
 func _on_Tower_mouse_entered():
-	$Range.visible = true
+	$Circle.visible = true
 
 
 func _on_Tower_mouse_exited():
-	$Range.visible = false
+	$Circle.visible = false

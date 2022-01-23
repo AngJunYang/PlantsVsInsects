@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Plants/Tower.gd" type="Script" id=1]
+[ext_resource path="res://Plants/Circle.gd" type="Script" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -26,6 +27,8 @@ one_shot = true
 [node name="CollisionPolygon2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
 
+[node name="Circle" type="Node2D" parent="."]
+script = ExtResource( 2 )
 [connection signal="mouse_entered" from="." to="." method="_on_Tower_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_Tower_mouse_exited"]
 [connection signal="timeout" from="AtkCD" to="." method="_on_AtkCD_timeout"]

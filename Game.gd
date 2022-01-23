@@ -15,7 +15,7 @@ var max_level = 14
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	cycle.playback_speed = 8.0
+	cycle.playback_speed = 1.0
 	cycle.play("day_and_night")
 	# Connect the UI elements
 	
@@ -63,7 +63,6 @@ func update_tower_preview():
 	build_valid = true
 	# Check collision
 	for area in tower.get_overlapping_areas():
-		print(area.get_name())
 		if area.get_name() == "Range":
 			continue 
 		else:
@@ -90,6 +89,7 @@ func verify_and_build():
 	if build_valid:
 		# ToDo: Check if player has enough money
 		var new_tower = load("res://Plants/" + build_type + ".tscn").instance()
+		new_tower.init = true
 		new_tower.position = build_location
 		$Towers.add_child(new_tower, true)
 		Globals.cash -= new_tower.cost

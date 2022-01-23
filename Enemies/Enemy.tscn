@@ -92,12 +92,18 @@ playing = true
 shape = SubResource( 5 )
 
 [node name="HP" type="Node2D" parent="."]
+z_index = 5
+z_as_relative = false
 script = ExtResource( 2 )
 
 [node name="Bar" type="TextureProgress" parent="HP"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = -33.0
+margin_top = -23.8016
+margin_right = 33.0
+margin_bottom = -21.8016
+value = 55.0
 texture_progress = ExtResource( 3 )
+nine_patch_stretch = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
