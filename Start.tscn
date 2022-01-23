@@ -1,0 +1,126 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Plants/Avocado.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Fonts/FutilePro.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Button.gd" type="Script" id=3]
+[ext_resource path="res://Enemies/RedAnt.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Button2.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[node name="Panel" type="Panel"]
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( -296, 152 )
+scale = Vector2( 3, 3 )
+
+[node name="RedAnt" parent="Node2D" instance=ExtResource( 4 )]
+position = Vector2( 338.667, -48 )
+rotation = 0.785397
+scale = Vector2( 0.33, 0.33 )
+
+[node name="RedAnt2" parent="Node2D" instance=ExtResource( 4 )]
+position = Vector2( 349.333, -37.3333 )
+rotation = 0.785397
+scale = Vector2( 0.33, 0.33 )
+
+[node name="RedAnt3" parent="Node2D" instance=ExtResource( 4 )]
+position = Vector2( 360, -26.6667 )
+rotation = 0.523598
+scale = Vector2( 0.33, 0.33 )
+
+[node name="RedAnt4" parent="Node2D" instance=ExtResource( 4 )]
+position = Vector2( 373.333, -18.6667 )
+scale = Vector2( 0.33, 0.33 )
+
+[node name="RedAnt5" parent="Node2D" instance=ExtResource( 4 )]
+position = Vector2( 386.667, -18.6667 )
+rotation = 0.261799
+scale = Vector2( 0.33, 0.33 )
+
+[node name="RedAnt6" parent="Node2D" instance=ExtResource( 4 )]
+position = Vector2( 400, -13.3333 )
+scale = Vector2( 0.33, 0.33 )
+
+[node name="RedAnt7" parent="Node2D" instance=ExtResource( 4 )]
+position = Vector2( 410.667, -8 )
+rotation = 0.523598
+scale = Vector2( 0.33, 0.33 )
+
+[node name="RedAnt8" parent="Node2D" instance=ExtResource( 4 )]
+position = Vector2( 421.333, -2.66669 )
+rotation = 1.0472
+scale = Vector2( 0.33, 0.33 )
+
+[node name="RedAnt9" parent="Node2D" instance=ExtResource( 4 )]
+position = Vector2( 432, 5.33331 )
+rotation = 0.785397
+scale = Vector2( 0.33, 0.33 )
+
+[node name="Avocado" parent="Node2D" instance=ExtResource( 1 )]
+position = Vector2( 120, 122.667 )
+
+[node name="Sprite" parent="Node2D/Avocado" index="0"]
+speed_scale = 0.5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 80.0
+margin_top = 8.0
+margin_right = 1104.0
+margin_bottom = 488.0
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[shake rate=5 level=10][color=#00FF00]		
+	PLANTS[/color]
+
+						 VS 
+										[rainbow freq=0.2 sat=10 val=20]
+										INSECTS[/rainbow][/shake]"
+text = "		
+	PLANTS
+
+						 VS 
+										
+										INSECTS"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 448.0
+margin_top = 368.0
+margin_right = 648.0
+margin_bottom = 408.0
+custom_fonts/font = SubResource( 2 )
+text = "Start Game"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 448.0
+margin_top = 488.0
+margin_right = 648.0
+margin_bottom = 528.0
+custom_fonts/font = SubResource( 2 )
+text = "Quit Game"
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_Button2_pressed"]
+
+[editable path="Node2D/Avocado"]

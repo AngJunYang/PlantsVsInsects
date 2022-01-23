@@ -28,6 +28,7 @@ one_shot = true
 shape = SubResource( 2 )
 
 [node name="Circle" type="Node2D" parent="."]
+visible = false
 script = ExtResource( 2 )
 [connection signal="mouse_entered" from="." to="." method="_on_Tower_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_Tower_mouse_exited"]

@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="PlantVsInsects"
-run/main_scene="res://Game.tscn"
+run/main_scene="res://Start.tscn"
 config/icon="res://icon.png"
 
 [autoload]
