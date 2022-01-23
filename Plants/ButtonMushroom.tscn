@@ -21,5 +21,4 @@ atk_cooldown = 0.8
 
 [node name="Sprite" parent="." index="0"]
 frames = SubResource( 1 )
-frame = 1
 playing = true
