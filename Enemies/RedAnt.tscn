@@ -24,8 +24,7 @@ animations = [ {
 [node name="RedAnt" instance=ExtResource( 1 )]
 health = 10
 damage = 2
-gold = 5
+gold = 3
 
 [node name="Sprite" parent="." index="0"]
 frames = SubResource( 3 )
-frame = 1

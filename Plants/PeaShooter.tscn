@@ -30,6 +30,7 @@ radius = 37.1187
 ] instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 attack_range = 600.0
+atk_cooldown = 1.8
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2( 1, 1 )

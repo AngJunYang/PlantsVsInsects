@@ -39,6 +39,7 @@ scale = Vector2( 3, 3 )
 
 [node name="AnimatedSprite" parent="." index="1"]
 frames = SubResource( 5 )
+frame = 3
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2( 1.66855, 0.583992 )
