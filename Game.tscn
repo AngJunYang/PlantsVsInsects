@@ -220,7 +220,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="EggPlant" type="TextureButton" parent="UI/BuildBar" groups=[
+[node name="Eggplant" type="TextureButton" parent="UI/BuildBar" groups=[
 "build_buttons",
 ]]
 margin_left = 68.0
@@ -228,7 +228,7 @@ margin_right = 132.0
 margin_bottom = 64.0
 texture_normal = ExtResource( 10 )
 
-[node name="TextureRect" type="TextureRect" parent="UI/BuildBar/EggPlant"]
+[node name="TextureRect" type="TextureRect" parent="UI/BuildBar/Eggplant"]
 margin_left = 20.0
 margin_top = 16.0
 margin_right = 52.0
@@ -243,7 +243,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="UI/BuildBar/EggPlant"]
+[node name="Label" type="Label" parent="UI/BuildBar/Eggplant"]
 margin_left = 28.0
 margin_top = 43.0
 margin_right = 68.0
@@ -409,4 +409,5 @@ script = ExtResource( 17 )
 position = Vector2( -78, 65.0001 )
 scale = Vector2( 0.860577, 0.867499 )
 texture = ExtResource( 16 )
+
 [connection signal="area_entered" from="Home" to="." method="_on_Home_area_entered"]
