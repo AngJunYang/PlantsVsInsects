@@ -25,7 +25,7 @@ animations = [ {
 [node name="BoxerMushroom" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 attack_range = 250.0
-cost = 50
+cost = 30
 
 [node name="Sprite" parent="." index="0"]
 scale = Vector2( 1, 1 )

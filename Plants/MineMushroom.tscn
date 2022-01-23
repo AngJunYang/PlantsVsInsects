@@ -16,9 +16,8 @@ animations = [ {
 [node name="MineMushroom" instance=ExtResource( 1 )]
 script = ExtResource( 4 )
 attack_range = 64.0
-cost = 70
+cost = 50
 
 [node name="Sprite" parent="." index="0"]
 frames = SubResource( 1 )
-frame = 1
 playing = true

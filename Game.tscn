@@ -155,9 +155,9 @@ __meta__ = {
 [node name="Label" type="Label" parent="UI/Health"]
 margin_left = 22.0
 margin_top = 13.0
-margin_right = 38.0
+margin_right = 46.0
 margin_bottom = 27.0
-text = "20"
+text = "100"
 
 [node name="Cash" type="HBoxContainer" parent="UI"]
 margin_left = 96.0
@@ -215,7 +215,7 @@ margin_left = 32.0
 margin_top = 43.0
 margin_right = 72.0
 margin_bottom = 57.0
-text = "20"
+text = "10"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -248,7 +248,7 @@ margin_left = 28.0
 margin_top = 43.0
 margin_right = 68.0
 margin_bottom = 57.0
-text = "100"
+text = "30"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -282,7 +282,7 @@ margin_left = 32.0
 margin_top = 43.0
 margin_right = 72.0
 margin_bottom = 57.0
-text = "70"
+text = "50"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -315,7 +315,7 @@ margin_left = 28.0
 margin_top = 43.0
 margin_right = 68.0
 margin_bottom = 57.0
-text = "20"
+text = "10"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -348,7 +348,7 @@ margin_left = 24.0
 margin_top = 43.0
 margin_right = 64.0
 margin_bottom = 57.0
-text = "50"
+text = "30"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -381,7 +381,7 @@ margin_left = 28.0
 margin_top = 43.0
 margin_right = 68.0
 margin_bottom = 57.0
-text = "70"
+text = "50"
 __meta__ = {
 "_edit_use_anchors_": false
 }

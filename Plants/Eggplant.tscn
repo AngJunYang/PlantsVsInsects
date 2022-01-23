@@ -23,8 +23,9 @@ animations = [ {
 ] instance=ExtResource( 1 )]
 script = ExtResource( 4 )
 attack_range = 100.0
-cost = 100
+cost = 30
 
 [node name="Sprite" parent="." index="0"]
 frames = SubResource( 2 )
+frame = 1
 playing = true
