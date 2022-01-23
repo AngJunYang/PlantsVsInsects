@@ -11,7 +11,7 @@ var wave_id = 0;
 var delay = 3.0
 var enemies_left = 0
 
-var max_level = 14
+var max_level = 11
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -105,6 +105,7 @@ func start_next_wave():
 	enemies_left = wave_data.size()
 	spawn_wave(wave_data)
 	wave_id += 1
+	$UI/Wave.text = "Wave: " + str(wave_id)
 	
 func spawn_wave(wave_data):
 	for i in wave_data:
@@ -117,6 +118,7 @@ func spawn_wave(wave_data):
 	if wave_id == max_level:
 		yield(get_tree().create_timer(10), "timeout")
 		get_tree().change_scene("res://WinScreen.tscn")
+	yield(get_tree().create_timer(5), "timeout")
 	start_next_wave()
 	
 ##########

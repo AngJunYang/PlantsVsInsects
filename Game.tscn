@@ -127,10 +127,10 @@ __meta__ = {
 }
 
 [node name="Health" type="HBoxContainer" parent="UI"]
-margin_left = 38.0
-margin_top = 560.0
-margin_right = 78.0
-margin_bottom = 600.0
+margin_left = 40.0
+margin_top = 568.0
+margin_right = 86.0
+margin_bottom = 608.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 0
@@ -160,10 +160,10 @@ margin_bottom = 27.0
 text = "100"
 
 [node name="Cash" type="HBoxContainer" parent="UI"]
-margin_left = 96.0
-margin_top = 560.0
-margin_right = 156.0
-margin_bottom = 600.0
+margin_left = 88.0
+margin_top = 568.0
+margin_right = 148.0
+margin_bottom = 608.0
 __meta__ = {
 "_edit_group_": true,
 "_edit_use_anchors_": false
@@ -382,6 +382,16 @@ margin_top = 43.0
 margin_right = 68.0
 margin_bottom = 57.0
 text = "100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Wave" type="Label" parent="UI"]
+margin_left = 60.0
+margin_top = 545.48
+margin_right = 111.0
+margin_bottom = 559.48
+text = "Wave: 1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
