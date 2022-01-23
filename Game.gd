@@ -11,7 +11,7 @@ var wave_id = 0;
 var delay = 3.0
 var enemies_left = 0
 
-var max_level = 12
+var max_level = 15
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
