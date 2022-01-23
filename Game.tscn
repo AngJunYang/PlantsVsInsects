@@ -246,7 +246,7 @@ margin_left = 28.0
 margin_top = 43.0
 margin_right = 68.0
 margin_bottom = 57.0
-text = "50"
+text = "100"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -392,4 +392,5 @@ script = ExtResource( 17 )
 position = Vector2( -78, 65.0001 )
 scale = Vector2( 0.860577, 0.867499 )
 texture = ExtResource( 16 )
+
 [connection signal="area_entered" from="Home" to="." method="_on_Home_area_entered"]

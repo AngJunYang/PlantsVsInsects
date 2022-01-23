@@ -127,5 +127,5 @@ func _on_Home_area_entered(area):
 		return
 	hp -= area.get_parent().damage
 	if hp < 0:
-		get_tree().quit()
+		get_tree().change_scene("res://LoseScreen.tscn")
 	$UI/Health._update(hp)

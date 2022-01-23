@@ -9,8 +9,9 @@ func _ready():
 	
 	
 func shoot(a):
-	for x in range(2):
-		spawnbullet(x * PI/2)
+	var num_bullets = 10
+	for x in range(num_bullets):
+		spawnbullet(x * PI/num_bullets)
 	
 func spawnbullet(rot):
 	var a = bullet.instance()
