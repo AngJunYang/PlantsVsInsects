@@ -30,5 +30,4 @@ cost = 50
 [node name="Sprite" parent="." index="0"]
 scale = Vector2( 1, 1 )
 frames = SubResource( 3 )
-frame = 1
 playing = true

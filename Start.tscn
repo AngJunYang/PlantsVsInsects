@@ -72,6 +72,7 @@ position = Vector2( 120, 122.667 )
 targetting = "nearest"
 
 [node name="Sprite" parent="Node2D/Avocado" index="0"]
+frame = 1
 speed_scale = 0.5
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]

@@ -16,6 +16,8 @@ animations = [ {
 [node name="ButtonMushroom" instance=ExtResource( 1 )]
 script = ExtResource( 4 )
 attack_range = 600.0
+bulletspeed = 1000.0
+atk_cooldown = 0.8
 
 [node name="Sprite" parent="." index="0"]
 frames = SubResource( 1 )

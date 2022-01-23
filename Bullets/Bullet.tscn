@@ -9,6 +9,7 @@ script = ExtResource( 1 )
 one_shot = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 

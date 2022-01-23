@@ -35,12 +35,10 @@ animations = [ {
 radius = 2.26456
 
 [node name="Node2D" instance=ExtResource( 2 )]
-scale = Vector2( 2, 2 )
+scale = Vector2( 3, 3 )
 
 [node name="AnimatedSprite" parent="." index="1"]
 frames = SubResource( 5 )
-frame = 2
-playing = true
 
 [node name="CollisionShape2D" parent="." index="2"]
 position = Vector2( 1.66855, 0.583992 )
