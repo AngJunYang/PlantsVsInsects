@@ -180,7 +180,9 @@ var waves = {
 		["Path2", "BlackAnt", 0.3],
 		["Path1", "RedAnt", 0.3],
 		["Path2", "RedAnt", 0.3],
-		
+	],
+	8: [
+		["Path1", ""]
 	]
 	
 }

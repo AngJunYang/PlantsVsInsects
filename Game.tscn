@@ -348,7 +348,7 @@ margin_left = 24.0
 margin_top = 43.0
 margin_right = 64.0
 margin_bottom = 57.0
-text = "30"
+text = "50"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -381,7 +381,7 @@ margin_left = 28.0
 margin_top = 43.0
 margin_right = 68.0
 margin_bottom = 57.0
-text = "50"
+text = "100"
 __meta__ = {
 "_edit_use_anchors_": false
 }
