@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Quit.gd" type="Script" id=1]
 [ext_resource path="res://Restart.gd" type="Script" id=2]
+[ext_resource path="res://Enemies/BrownRat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemies/BlackAnt.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Enemies/GreyRat.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Enemies/RedAnt.tscn" type="PackedScene" id=6]
 
 [node name="Panel" type="Panel"]
 anchor_left = 0.5
@@ -59,6 +63,57 @@ script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="BrownRat" parent="." instance=ExtResource( 3 )]
+position = Vector2( 160, 788 )
+
+[node name="BrownRat2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 280, 732 )
+
+[node name="BrownRat3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 208, 684 )
+
+[node name="BlackAnt" parent="." instance=ExtResource( 4 )]
+position = Vector2( 512, 708 )
+
+[node name="BlackAnt2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 624, 636 )
+
+[node name="BlackAnt3" parent="." instance=ExtResource( 4 )]
+position = Vector2( 424, 628 )
+
+[node name="BlackAnt4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 520, 612 )
+
+[node name="RedAnt" parent="." instance=ExtResource( 6 )]
+position = Vector2( 400, 532 )
+
+[node name="RedAnt2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 640, 548 )
+
+[node name="RedAnt3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 400, 420 )
+
+[node name="RedAnt4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 520, 412 )
+
+[node name="RedAnt5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 632, 444 )
+
+[node name="GreyRat" parent="." instance=ExtResource( 5 )]
+position = Vector2( 664, 764 )
+
+[node name="GreyRat2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 456, 772 )
+
+[node name="GreyRat3" parent="." instance=ExtResource( 5 )]
+position = Vector2( 360, 804 )
+
+[node name="GreyRat4" parent="." instance=ExtResource( 5 )]
+position = Vector2( 288, 628 )
+
+[node name="BrownRat4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 856, 660 )
 
 [connection signal="pressed" from="VBoxContainer/Restart" to="VBoxContainer/Restart" method="_on_Restart_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="VBoxContainer/Quit" method="_on_Quit_pressed"]

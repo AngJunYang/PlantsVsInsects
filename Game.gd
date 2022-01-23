@@ -115,7 +115,8 @@ func spawn_wave(wave_data):
 		get_node(i[0]).add_child(enemy)
 		yield(get_tree().create_timer(i[2]), "timeout")
 	if wave_id == max_level:
-		get_tree().quit()
+		yield(get_tree().create_timer(10), "timeout")
+		get_tree().change_scene("res://WinScreen.tscn")
 	start_next_wave()
 	
 ##########

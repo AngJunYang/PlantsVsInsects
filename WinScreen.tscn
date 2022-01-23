@@ -1,0 +1,123 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Quit.gd" type="Script" id=1]
+[ext_resource path="res://Restart.gd" type="Script" id=2]
+[ext_resource path="res://Plants/Eggplant.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Plants/ButtonMushroom.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Plants/BoxerMushroom.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Plants/PeaShooter.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Plants/Avocado.tscn" type="PackedScene" id=7]
+
+[node name="Panel" type="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -512.0
+margin_right = 512.0
+margin_bottom = 512.0
+rect_min_size = Vector2( 1024, 1024 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -41.0
+margin_top = -31.0
+margin_right = 41.0
+margin_bottom = 31.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 82.0
+margin_bottom = 14.0
+text = "You Won!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Restart" type="Button" parent="VBoxContainer"]
+margin_top = 18.0
+margin_right = 82.0
+margin_bottom = 38.0
+text = "Restart"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+margin_top = 42.0
+margin_right = 82.0
+margin_bottom = 62.0
+text = "Quit Game"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonMushroom" parent="." instance=ExtResource( 4 )]
+position = Vector2( 232, 516 )
+
+[node name="BoxerMushroom" parent="." instance=ExtResource( 5 )]
+position = Vector2( 288, 564 )
+
+[node name="Avocado" parent="." instance=ExtResource( 7 )]
+position = Vector2( 360, 516 )
+
+[node name="Avocado2" parent="." instance=ExtResource( 7 )]
+position = Vector2( 504, 420 )
+
+[node name="PeaShooter" parent="." instance=ExtResource( 6 )]
+position = Vector2( 456, 340 )
+
+[node name="PeaShooter2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 520, 340 )
+
+[node name="PeaShooter3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 560, 604 )
+
+[node name="PeaShooter7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 384, 380 )
+
+[node name="PeaShooter8" parent="." instance=ExtResource( 6 )]
+position = Vector2( 392, 460 )
+
+[node name="PeaShooter9" parent="." instance=ExtResource( 6 )]
+position = Vector2( 416, 580 )
+
+[node name="PeaShooter10" parent="." instance=ExtResource( 6 )]
+position = Vector2( 480, 620 )
+
+[node name="PeaShooter4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 624, 548 )
+
+[node name="PeaShooter5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 624, 468 )
+
+[node name="PeaShooter6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 592, 396 )
+
+[node name="Eggplant" parent="." instance=ExtResource( 3 )]
+position = Vector2( 712, 636 )
+
+[node name="Eggplant2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 744, 500 )
+
+[node name="Eggplant3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 736, 556 )
+
+[node name="Eggplant4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 736, 596 )
+
+[connection signal="pressed" from="VBoxContainer/Restart" to="VBoxContainer/Restart" method="_on_Restart_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="VBoxContainer/Quit" method="_on_Quit_pressed"]
