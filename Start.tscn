@@ -69,6 +69,7 @@ scale = Vector2( 0.33, 0.33 )
 
 [node name="Avocado" parent="Node2D" instance=ExtResource( 1 )]
 position = Vector2( 120, 122.667 )
+targetting = "nearest"
 
 [node name="Sprite" parent="Node2D/Avocado" index="0"]
 speed_scale = 0.5
@@ -120,7 +121,6 @@ script = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
 [connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
 [connection signal="pressed" from="Button2" to="Button2" method="_on_Button2_pressed"]
 

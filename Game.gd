@@ -15,7 +15,7 @@ var max_level = 11
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	cycle.playback_speed = 1.0
+	cycle.playback_speed = 8.0
 	cycle.play("day_and_night")
 	# Connect the UI elements
 	
